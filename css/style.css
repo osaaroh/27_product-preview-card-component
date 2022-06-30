@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ## Colors */
+    /* ### Primary */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    /* ### Neutral */
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+    /* ## Typography */
+    --header-font: 'Fraunces', serif;
+    --body-font: 'Montserrat', sans-serif;
+    /* ### Body Copy  */
+    --font-size-paragraph: 14px;
+}
+
+button,
+input {
+    font-family: inherit;
+    border: none;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--cream);
+    font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+h5,
+h6 {
+    font-family: var(--header-font);
+}
+
+p,
+h4 {
+    line-height: 1.7rem;
+    color: var(--dark-grayish-blue);
+}
+
+h4 {
+    letter-spacing: 0.4rem;
+    font-size: 0.85rem;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 0.5rem;
+}
+
+main,
+.card__image-d,
+.card__content {
+    max-height: 450px;
+}
+
+.card__image-m {
+    display: none;
+}
+
+.card__content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--white);
+}
+
+.card__price {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card__content h1 {
+    font-size: 2.3rem;
+}
+
+.card__button {
+    padding: 0.8rem 0;
+    background: var(--dark-cyan);
+    color: var(--white);
+    border-radius: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: all .3s;
+}
+
+.card__button:hover {
+    cursor: pointer;
+    background: var(--very-dark-blue);
+}
+
+.card__price h2 {
+    color: var(--dark-cyan);
+}
+
+.card__price h3 {
+    text-decoration: line-through;
+    font-size: 0.85rem;
+    color: var(--dark-grayish-blue);
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        flex-direction: column;
+        max-height: unset;
+    }
+    .card__image-d {
+        display: none;
+    }
+    .card__image-m {
+        display: block;
+        width: 100%;
+    }
+    .card__content {
+        gap: 20px;
+    }
+    .card__content h1 {
+        font-size: 1.8rem;
+    }
+}
